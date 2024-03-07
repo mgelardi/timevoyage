@@ -1,0 +1,15 @@
+{
+  "dev": {
+    "awscloudformation": {
+      "AuthRoleName": "amplify-timevoyage-dev-5301c-authRole",
+      "UnauthRoleArn": "arn:aws:iam::396830361220:role/amplify-timevoyage-dev-5301c-unauthRole",
+      "AuthRoleArn": "arn:aws:iam::396830361220:role/amplify-timevoyage-dev-5301c-authRole",
+      "Region": "eu-west-1",
+      "DeploymentBucketName": "amplify-timevoyage-dev-5301c-deployment",
+      "UnauthRoleName": "amplify-timevoyage-dev-5301c-unauthRole",
+      "StackName": "amplify-timevoyage-dev-5301c",
+      "StackId": "arn:aws:cloudformation:eu-west-1:396830361220:stack/amplify-timevoyage-dev-5301c/e15c5050-dc72-11ee-a68c-02e1d2711f21",
+      "AmplifyAppId": "d2hffzzhv01ro3"
+    }
+  }
+}

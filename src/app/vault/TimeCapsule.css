@@ -1,0 +1,37 @@
+.time-capsule {
+  width: 200px;
+  height: 200px;
+  position: relative;
+  cursor: pointer;
+  transition: transform 0.3s ease; /* Smooth transition for opening/closing */
+}
+
+.time-capsule.open {
+  transform: rotateY(90deg); /* Open the time capsule */
+}
+
+.capsule {
+  width: 100%;
+  height: 100%;
+  background-image: url('closed-time-capsule.png'); /* Image for closed time capsule */
+  background-size: cover;
+}
+
+.contents {
+  display: none; /* Initially hide contents */
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(255, 255, 255, 0.8); /* Semi-transparent background for contents */
+  padding: 20px;
+}
+
+.time-capsule.open .contents {
+  display: block; /* Show contents when time capsule is open */
+}
+
+.element {
+  margin-bottom: 10px;
+}
