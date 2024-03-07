@@ -1,5 +1,5 @@
 const mysql = require('mysql');
-require('../.env');
+require('dotenv/config');
 
 const pool = mysql.createPool({
     connectionLimit: 10,

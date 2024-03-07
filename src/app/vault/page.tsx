@@ -2,7 +2,7 @@
 import React, { useState } from 'react';
 import CommonLayout from "@/layout/CommonLayout";
 import './TimeCapsule.css'; // Import CSS for time capsule animation
-require('../.env');
+require('dotenv/config');
 const pool = require('../config/db.js');
 
 //MYSQL CONNECTION
