@@ -55,5 +55,12 @@
     "@types/js-cookie": "^3.0.4",
     "@types/react-slick": "^0.23.10",
     "sass": "^1.64.1"
+  },
+  "browser": {
+    "fs": false,
+    "path": false,
+    "os": false,
+    "net": false,
+    "tls": false
   }
 }
