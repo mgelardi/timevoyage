@@ -81,12 +81,12 @@ export const userMenuData: UserMenuDataInterFace[] = [
 
 
 
-//export const sideBarData: sideBarDataType[] = [
+export const sideBarData: sideBarDataType[] = [
   //{ path: "/newsfeed/style1", icon: "Search", tooltipTittle: "Explore" },
-  //{ path: "/event", icon: "Calendar", tooltipTittle: "Event & history" },
-  //{ path: Href, icon: "User", tooltipTittle: "Groups" },
-  //{ path: "/favourite/home", icon: "Star", tooltipTittle: "Featured" },
-//];
+  { path: "/event", icon: "Calendar", tooltipTittle: "Event & history" },
+  { path: Href, icon: "User", tooltipTittle: "Groups" },
+  { path: "/favourite/home", icon: "Star", tooltipTittle: "Featured" },
+];
 
 export const smallSideBarData: SideBarDataInterFace[] = [
   { title: "newsfeed", icon: "File" },
