@@ -1,10 +1,10 @@
-"use client";
-import React, { useState } from 'react';
-import CommonLayout from "@/layout/CommonLayout";
+//"use client";
+//import React, { useState } from 'react';
+//import CommonLayout from "@/layout/CommonLayout";
 
 //import './TimeCapsule.css'; // Import CSS for time capsule animation
 
-const TimeCapsule = () => {
+//const TimeCapsule = () => {
   //const [isOpen, setIsOpen] = useState(false);
 
   //const toggleTimeCapsule = (e) => {
@@ -12,11 +12,11 @@ const TimeCapsule = () => {
     //setIsOpen(prevState => !prevState);
   //};
 
-  return (
-    <CommonLayout mainClass="custom-padding" headerClassName="header-light" sideBarClassName="sidebar-white" loaderName="style2" differentLogo="logo-colore.png">
+  //return (
+    //<CommonLayout mainClass="custom-padding" headerClassName="header-light" sideBarClassName="sidebar-white" loaderName="style2" differentLogo="logo-colore.png">
     
-    </CommonLayout>
-  );
-};
+    //</CommonLayout>
+  //);
+//};
 
-export default TimeCapsule;
+//export default TimeCapsule;
