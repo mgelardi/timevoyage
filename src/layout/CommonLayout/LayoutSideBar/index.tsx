@@ -12,7 +12,7 @@ const LayoutSideBar: FC<CommonLayoutSideBarInterFace> = ({sideBarClassName}) => 
   return (
     <div className={`sidebar-panel ${sideBarClassName? sideBarClassName:""}`}>
       <div className="main-icon">
-        <a href="./vault/index.tsx">
+        <a href={Href}>
           <DynamicFeatherIcon iconName="Archive" className="bar-icon" />
         </a>
       </div>
