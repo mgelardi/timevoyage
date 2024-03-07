@@ -5,7 +5,7 @@ import { Providers } from "@/redux-toolkit/provider";
 import { ToastContainer } from "react-toastify";
 
 export const metadata: Metadata = {
-  title: "FriendBookNext",
+  title: "Time Voyage",
   description: "themes.pixelstrap.com",
 };
 
