@@ -20,6 +20,7 @@ const App = () => {
 
         connection.query('SELECT * FROM persons', (error, results) => {
           if (error) throw error;
+          console.log(results);
           setData(results);
       });
 
