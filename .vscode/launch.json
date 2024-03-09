@@ -1,0 +1,10 @@
+{
+    "configurations": [
+        {
+            "type": "chrome",
+            "name": "https://main.d2hffzzhv01ro3.amplifyapp.com/vault",
+            "request": "launch",
+            "url": "https://main.d2hffzzhv01ro3.amplifyapp.com/vault"
+        }
+    ]
+}

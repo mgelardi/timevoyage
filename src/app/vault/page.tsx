@@ -16,6 +16,14 @@ const App = () => {
             database: 'tvdb'
         });
 
+        connection.connect((error) => {
+          if (error) {
+              console.error('Error connecting to database:', error);
+              return;
+          }
+          console.log('Connected to database');
+      });
+
         connection.connect();
 
         connection.query('SELECT * FROM persons', (error, results) => {
