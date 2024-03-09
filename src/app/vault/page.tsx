@@ -6,20 +6,20 @@ require('dotenv/config');
 const pool = require('../config/db.js');
 
 //MYSQL CONNECTION
-pool.getConnection( (err, conn) => {
-  if (err) throw err;
-  const dbid = 1;
-  const lastname = 'Gelardi';
-  const firstname = 'Michelangelo';
-  const address = 'Hollystown';
-  const city = 'Dublin';
-  const qry = `INSERT INTO persons(ID,LastName,FirstName,Address,City) VALUES (?,?,?,?,?)`;
-  conn.query(qry, [dbid,lastname,firstname,address,city], (err, result) => {
-    conn.release();
-    if (err) throw err;
-    console.log(result);
-  });
-});
+//pool.getConnection( (err, conn) => {
+  //if (err) throw err;
+  //const dbid = 1;
+  //const lastname = 'Gelardi';
+  //const firstname = 'Michelangelo';
+  //const address = 'Hollystown';
+  //const city = 'Dublin';
+  //const qry = `INSERT INTO persons(ID,LastName,FirstName,Address,City) VALUES (?,?,?,?,?)`;
+  //conn.query(qry, [dbid,lastname,firstname,address,city], (err, result) => {
+    //conn.release();
+    //if (err) throw err;
+    //console.log(result);
+  //});
+//});
 
 const TimeCapsule = () => {
 
