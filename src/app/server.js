@@ -1,9 +1,11 @@
-// server.js
 const express = require('express');
 const mysql = require('mysql');
+const cors = require('cors'); // Import the cors middleware
 
 const app = express();
 const port = 5000;
+
+app.use(cors()); // Use cors middleware to allow requests from all origins
 
 const connection = mysql.createConnection({
     connectionLimit: 10,

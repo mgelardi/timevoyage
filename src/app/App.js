@@ -6,7 +6,7 @@ const App = () => {
     const [data, setData] = useState([]); // Initialize state using useState hook
 
     useEffect(() => {
-        axios.get('http://localhost:5000/api/data')
+        axios.get('https://timevoyagedb.crm0qiaemqmq.eu-west-1.rds.amazonaws.com:5000/api/data')
             .then(response => {
                 setData(response.data);
             })
