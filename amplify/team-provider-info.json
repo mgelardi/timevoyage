@@ -10,6 +10,11 @@
       "StackName": "amplify-timevoyage-dev-5301c",
       "StackId": "arn:aws:cloudformation:eu-west-1:396830361220:stack/amplify-timevoyage-dev-5301c/e15c5050-dc72-11ee-a68c-02e1d2711f21",
       "AmplifyAppId": "d2hffzzhv01ro3"
+    },
+    "categories": {
+      "api": {
+        "timevoyage": {}
+      }
     }
   }
 }
