@@ -6,10 +6,10 @@ import mysql from 'mysql';
 //DB
 
 const App = () => {
-    const [data, setData] = useState([]);
+  const [data, setData] = useState([]);
 
-    useEffect(() => {
-        const connection = mysql.createConnection({
+  useEffect(() => {
+      const connection = mysql.createConnection({
             host: 'timevoyagedb.crm0qiaemqmq.eu-west-1.rds.amazonaws.com',
             user: 'admin',
             password: 'P4p3r1n0!',
@@ -18,10 +18,10 @@ const App = () => {
 
         connection.connect();
 
-        connection.query('SELECT * FROM persons', (error, results, fields) => {
-            if (error) throw error;
-            setData(results);
-        });
+        connection.query('SELECT * FROM persons', (error, results) => {
+          if (error) throw error;
+          setData(results);
+      });
 
         connection.end();
     }, []);
@@ -30,9 +30,9 @@ const App = () => {
       <CommonLayout mainClass="custom-padding" headerClassName="header-light" sideBarClassName="sidebar-white" loaderName="style2" differentLogo="logo-colore.png">
       <h1>Data from MySQL Database</h1>
         <ul>
-          {data.map(item => (
-            <li key={item.id}>{item.name}</li>
-          ))}
+        {data.map(item => (
+          <li key={item.id}>{item.name}</li>
+        ))}
         </ul>
       </CommonLayout>
     );
