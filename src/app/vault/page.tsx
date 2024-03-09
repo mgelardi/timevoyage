@@ -1,32 +1,32 @@
 "use client";
-import React, { useState } from 'react';
+import React, { useState , useEffect } from 'react';
 import CommonLayout from "@/layout/CommonLayout";
-import './TimeCapsule.css'; // Import CSS for time capsule animation
-require('dotenv/config');
-const pool = require('../config/db.js');
+import axios from 'axios';
 
-//MYSQL CONNECTION
-pool.getConnection( (err, conn) => {
-  if (err) throw err;
-  const lastname = 'Gelardi';
-  const firstname = 'Michelangelo';
-  const address = 'Hollystown';
-  const city = 'Dublin';
-  //const qry = `INSERT INTO persons(ID,LastName,FirstName,Address,City) VALUES (?,?,?,?)`;
-  //conn.query(qry, [lastname,firstname,address,city], (err, result) => {
-    //conn.release();
-    //if (err) throw err;
-    //console.log(result);
-  //});
-});
+//DB
+const DataDisplay = () => {
+  const [data, setData] = useState([]);
 
-const TimeCapsule = () => {
+  useEffect(() => {
+      axios.get('https://main.d2hffzzhv01ro3.amplifyapp.com/api/data')
+          .then(response => {
+              setData(response.data);
+          })
+          .catch(error => {
+              console.error('Error fetching data:', error);
+          });
+  }, []);
 
   return (
     <CommonLayout mainClass="custom-padding" headerClassName="header-light" sideBarClassName="sidebar-white" loaderName="style2" differentLogo="logo-colore.png">
-    <div></div>
+    <h1>Data from MySQL Database</h1>
+      <ul>
+        {data.map(item => (
+          <li key={item.FirstName}>{item.LastName}</li>
+        ))}
+      </ul>
     </CommonLayout>
   );
 };
 
-export default TimeCapsule;
+export default DataDisplay;
