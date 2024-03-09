@@ -10,7 +10,7 @@ const App = () => {
 
   useEffect(() => {
       const connection = mysql.createConnection({
-            host: 'timevoyagedb.crm0qiaemqmq.eu-west-1.rds.amazonaws.com',
+            host: 'https://timevoyagedb.crm0qiaemqmq.eu-west-1.rds.amazonaws.com',
             user: 'admin',
             password: 'P4p3r1n0!',
             database: 'tvdb'
