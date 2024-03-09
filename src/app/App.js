@@ -5,6 +5,7 @@ import axios from 'axios';
 // Mark the component as a client component
 // This ensures that components using React hooks work correctly in a server-side rendered context
 // See https://nextjs.org/docs/getting-started/react-essentials#client-components
+const useClient = () => {};
 useClient;
 
 const App = () => {
