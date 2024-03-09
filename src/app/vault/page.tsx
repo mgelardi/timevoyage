@@ -31,7 +31,7 @@ const App = () => {
       <h1>Data from MySQL Database</h1>
         <ul>
         {data.map(item => (
-          <li key={item.id}>{item.name}</li>
+          <li key={item.ID}>{item.LastName}</li>
         ))}
         </ul>
       </CommonLayout>
