@@ -1,21 +1,20 @@
 // App.js
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
+import { useClient } from 'next/client'; // Import useClient hook
 
 const App = () => {
     const [data, setData] = useState([]);
+    const client = useClient(); // Use useClient hook to mark component as client-side
 
     useEffect(() => {
-        // Check if we're in the browser environment before making the API call
-        if (typeof window !== 'undefined') {
-            axios.get('http://timevoyagedb.crm0qiaemqmq.eu-west-1.rds.amazonaws.com/api/data')
-                .then(response => {
-                    setData(response.data);
-                })
-                .catch(error => {
-                    console.error('Error fetching data:', error);
-                });
-        }
+        axios.get('/api/data') // Assuming API routes are in the same project
+            .then(response => {
+                setData(response.data);
+            })
+            .catch(error => {
+                console.error('Error fetching data:', error);
+            });
     }, []);
 
     return (
