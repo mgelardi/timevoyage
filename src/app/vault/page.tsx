@@ -17,7 +17,7 @@ pool.getConnection( (err, conn) => {
   conn.query(qry, [dbid,lastname,firstname,address,city], (err, result) => {
     conn.release();
     if (err) throw err;
-    console.log(results);
+    console.log(result);
   });
 });
 
