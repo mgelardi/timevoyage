@@ -8,7 +8,7 @@ const DataDisplay = () => {
   const [data, setData] = useState([]);
 
   useEffect(() => {
-      axios.get('https://localhost:3360/api/data')
+      axios.get('https://timevoyagedb.crm0qiaemqmq.eu-west-1.rds.amazonaws.com:3360/api/data')
           .then(response => {
               setData(response.data);
           })
