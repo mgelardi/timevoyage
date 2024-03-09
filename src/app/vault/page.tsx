@@ -1,45 +1,36 @@
-"use client";
+// Import necessary modules
 import React, { useState, useEffect } from 'react';
-import CommonLayout from "@/layout/CommonLayout";
-const mysql = require('mysql');
+import axios from 'axios';
 
-//DB
-
-const App = () => {
+// Define the Page component
+const Page = () => {
+    // Initialize state to hold fetched data
     const [data, setData] = useState([]);
 
+    // Fetch data from MySQL database when component mounts
     useEffect(() => {
-        const connection = mysql.createConnection({
-            host: 'timevoyagedb.crm0qiaemqmq.eu-west-1.rds.amazonaws.com',
-            user: 'admin',
-            password: 'P4p3r1n0!',
-            database: 'tvdb'
-        });
-
-        connection.connect((error) => {
-            if (error) {
-                console.error('Error connecting to database:', error);
-                return;
-            }
-            console.log('Connected to database');
-
-            connection.query('SELECT * FROM persons', (error, results) => {
-                if (error) throw error;
-                console.log(results);
-                setData(results);
-                connection.end(); // Close connection after querying data
+        // Make GET request to Express server endpoint
+        axios.get('https://main.d2hffzzhv01ro3.amplifyapp.com/vault:5000/api/data')
+            .then(response => {
+                // Update state with fetched data
+                setData(response.data);
+            })
+            .catch(error => {
+                console.error('Error fetching data:', error);
             });
-        });
     }, []);
 
+    // Render the fetched data
     return (
-        <CommonLayout mainClass="custom-padding" headerClassName="header-light" sideBarClassName="sidebar-white" loaderName="style2" differentLogo="logo-colore.png">
+        <div>
             <h1>Data from MySQL Database</h1>
             <ul>
-               
+                {data.map(item => (
+                    <li key={item.id}>{item.name}</li>
+                ))}
             </ul>
-        </CommonLayout>
+        </div>
     );
 };
 
-export default App;
+export default Page;
