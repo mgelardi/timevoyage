@@ -7,6 +7,7 @@ module.exports = function (webpackEnv) {
         fallback: {
           "fs": false,
           "os": false,
+          "tls": false,
           "path": false,
         }
       }
