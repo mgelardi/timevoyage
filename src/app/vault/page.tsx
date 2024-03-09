@@ -1,24 +1,23 @@
-// Import necessary modules
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 
 // Define the Page component
 const Page = () => {
-    // Initialize state to hold fetched data
     const [data, setData] = useState([]);
 
-    // Fetch data from MySQL database when component mounts
     useEffect(() => {
-        // Make GET request to Express server endpoint
-        axios.get('https://main.d2hffzzhv01ro3.amplifyapp.com/vault:5000/api/data')
-            .then(response => {
-                // Update state with fetched data
-                setData(response.data);
-            })
-            .catch(error => {
-                console.error('Error fetching data:', error);
-            });
+        // Fetch data from API when component mounts on the client side
+        fetchData();
     }, []);
+
+    const fetchData = async () => {
+        try {
+            const response = await axios.get('/api/data');
+            setData(response.data);
+        } catch (error) {
+            console.error('Error fetching data:', error);
+        }
+    };
 
     // Render the fetched data
     return (
