@@ -1,2 +1,2 @@
-import Page from '@/pages/vault';
-export default Page;
+//import Page from '@/pages/vault';
+//export default Page;
