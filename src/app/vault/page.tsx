@@ -1,7 +1,7 @@
 "use client";
 import React, { useState , useEffect } from 'react';
 import CommonLayout from "@/layout/CommonLayout";
-import mysql from 'mysql';
+const mysql = require('mysql');
 
 //DB
 
