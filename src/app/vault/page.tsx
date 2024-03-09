@@ -8,7 +8,7 @@ const DataDisplay = () => {
   const [data, setData] = useState([]);
 
   useEffect(() => {
-      axios.get('https://main.d2hffzzhv01ro3.amplifyapp.com/api/data')
+      axios.get('https://main.d2hffzzhv01ro3.amplifyapp.com:3360/api/data')
           .then(response => {
               setData(response.data);
           })
