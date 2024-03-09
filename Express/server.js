@@ -9,7 +9,7 @@ app.use(cors());
 
 // MySQL database configuration
 const connection = mysql.createConnection({
-  host: 'Ytimevoyagedb.crm0qiaemqmq.eu-west-1.rds.amazonaws.com',
+  host: 'timevoyagedb.crm0qiaemqmq.eu-west-1.rds.amazonaws.com',
   user: 'admin',
   password: 'P4p3r1n0!',
   database: 'tvdb'
