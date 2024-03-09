@@ -1,8 +1,9 @@
 // App.js
-const __isClient = typeof window !== 'undefined';
-
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
+import dynamic from 'next/dynamic';
+
+const ClientOnlyComponent = dynamic(() => import('../components/ClientOnlyComponent'), { ssr: false });
 
 const App = () => {
     const [data, setData] = useState([]);
@@ -18,14 +19,16 @@ const App = () => {
     }, []);
 
     return (
-        <div>
-            <h1>Data from MySQL Database</h1>
-            <ul>
-                {data.map(item => (
-                    <li key={item.id}>{item.name}</li>
-                ))}
-            </ul>
-        </div>
+        <ClientOnlyComponent>
+            <div>
+                <h1>Data from MySQL Database</h1>
+                <ul>
+                    {data.map(item => (
+                        <li key={item.id}>{item.name}</li>
+                    ))}
+                </ul>
+            </div>
+        </ClientOnlyComponent>
     );
 };
 
