@@ -1,6 +1,6 @@
 // page.stx
-import React, { useState } from 'react'; // Import useState and useEffect hooks
-import App from '../App'; // Assuming App.js is in the same directory
+import React, { useState , useEffect } from 'react'; // Import useState and useEffect hooks
+import App from '../App.js'; // Assuming App.js is in the same directory
 
 const Page = () => {
     return (
