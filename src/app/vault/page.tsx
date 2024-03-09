@@ -22,7 +22,7 @@ const DataDisplay = () => {
     <h1>Data from MySQL Database</h1>
       <ul>
         {data.map(item => (
-          <li key={item.FirstName}>{item.LastName}</li>
+          <li key={item.firstname}>{item.lastname}</li>
         ))}
       </ul>
     </CommonLayout>
