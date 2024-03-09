@@ -39,9 +39,7 @@ const App = () => {
       <CommonLayout mainClass="custom-padding" headerClassName="header-light" sideBarClassName="sidebar-white" loaderName="style2" differentLogo="logo-colore.png">
       <h1>Data from MySQL Database</h1>
         <ul>
-        {data.map(item => (
-          <li key={item.ID}>{item.LastName}</li>
-        ))}
+        
         </ul>
       </CommonLayout>
     );
