@@ -1,35 +1,32 @@
+// page.tsx
+
 import React, { useState, useEffect } from 'react';
-import axios from 'axios';
+import axios from 'axios'; // Import Axios
 
-// Define the Page component
 const Page = () => {
-    const [data, setData] = useState([]);
+  const [data, setData] = useState([]); // State to hold fetched data
 
-    useEffect(() => {
-        // Fetch data from API when component mounts on the client side
-        fetchData();
-    }, []);
+  useEffect(() => {
+    // Fetch data when component mounts
+    axios.get('https://your-amplify-app-url.amazonaws.com/api/data') // Replace with your actual URL
+      .then(response => {
+        setData(response.data); // Update state with fetched data
+      })
+      .catch(error => {
+        console.error('Error fetching data:', error);
+      });
+  }, []); // Empty dependency array to run effect only once on component mount
 
-    const fetchData = async () => {
-        try {
-            const response = await axios.get('/api/data');
-            setData(response.data);
-        } catch (error) {
-            console.error('Error fetching data:', error);
-        }
-    };
-
-    // Render the fetched data
-    return (
-        <div>
-            <h1>Data from MySQL Database</h1>
-            <ul>
-                {data.map(item => (
-                    <li key={item.id}>{item.name}</li>
-                ))}
-            </ul>
-        </div>
-    );
+  return (
+    <div>
+      <h1>Data from MySQL Database</h1>
+      <ul>
+        {data.map(item => (
+          <li key={item.id}>{item.name}</li>
+        ))}
+      </ul>
+    </div>
+  );
 };
 
 export default Page;
