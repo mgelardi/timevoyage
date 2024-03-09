@@ -1,6 +1,6 @@
 // App.js
-// @ts-nocheck
-// @ts-ignore
+const __isClient = typeof window !== 'undefined';
+
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 
