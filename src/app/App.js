@@ -1,12 +1,12 @@
 // App.js
-import React, { useState, useEffect } from 'react'; // Import useState and useEffect hooks
+import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 
 const App = () => {
-    const [data, setData] = useState([]); // Initialize state using useState hook
+    const [data, setData] = useState([]);
 
     useEffect(() => {
-        axios.get('https://timevoyagedb.crm0qiaemqmq.eu-west-1.rds.amazonaws.com:5000/api/data')
+        axios.get('http://timevoyagedb.crm0qiaemqmq.eu-west-1.rds.amazonaws.com/api/data')
             .then(response => {
                 setData(response.data);
             })
